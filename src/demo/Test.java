@@ -12,20 +12,10 @@ public class Test {
 
 	
 	public static void main(String[] args) {
-		
-		QueryRunner queryrunner = new QueryRunner(C3P0Utils.getDataSource());
-		User user = null;
-		String sql = "select * from user where username=? and password=?";
-		Object[] params = {"alex", "1234"}; 
-		try {
-			user = queryrunner.query(sql, new BeanHandler<domain.User>(User.class), params);
-			System.out.println(user);
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		
-		
+		//文件相对路径
+		String filePath = "/image/小猫咪.jpeg";
+		//文件名
+		String filename = filePath.substring(filePath.lastIndexOf("/")+1, filePath.length());
+		System.out.println(filename);
 	}
 }
