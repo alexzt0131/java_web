@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		//封装到User类
 		User user = new User();
-		user.setName(username);
+		user.setUsername(username);
 		user.setPassword(password);
 		//查询用户是否存在
 		UserService us = new UserService();

@@ -23,7 +23,7 @@ public class DAO {
 		String sql = "select * from user where username=? and password=?";
 		
 		try {
-			return qr.query(sql, new BeanHandler<domain.User>(domain.User.class), user.getName(),user.getPassword());
+			return qr.query(sql, new BeanHandler<domain.User>(domain.User.class), user.getUsername(),user.getPassword());
 		} catch (SQLException e) {
 			return null;
 		}

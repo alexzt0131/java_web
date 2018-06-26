@@ -1,6 +1,8 @@
 package demo;
 
+import java.lang.reflect.Array;
 import java.sql.SQLException;
+import java.util.Arrays;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
@@ -12,10 +14,7 @@ public class Test {
 
 	
 	public static void main(String[] args) {
-		//文件相对路径
-		String filePath = "/image/小猫咪.jpeg";
-		//文件名
-		String filename = filePath.substring(filePath.lastIndexOf("/")+1, filePath.length());
-		System.out.println(filename);
+		Object[] params = {"1","2"};
+		System.out.println(Arrays.toString(params));
 	}
 }
