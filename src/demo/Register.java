@@ -37,25 +37,25 @@ public class Register extends HttpServlet {
 		} catch (IllegalAccessException | InvocationTargetException e) {
 			e.printStackTrace();
 		}
-//		System.out.println(user);
 		
 		//对比用户是否存在
-		User userFlag = User.isExist(user);
+		User userFlag = UserService.isExist(user);
 		User registeredUser = null;
 		//判断用户是否存在
 		if(userFlag == null) {
 			
 			//开始注册
-			registeredUser = User.register(user);
+			registeredUser = UserService.register(user);
 			if(registeredUser != null) {
 				System.out.println("注册成功");
-				response.sendRedirect(request.getContextPath()+"/request/login.html");
+				response.sendRedirect(request.getContextPath()+"/request/login.jsp");
 			}else {
 				System.out.println("注册异常");
 			}
 
 		}else {
 			System.out.println(user.getUsername() + "该用户已存在");
+			request.getRequestDispatcher("/request/reg.html").forward(request, response);
 		}
 		
 		

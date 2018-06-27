@@ -33,10 +33,15 @@ public class LoginServlet extends HttpServlet {
 		User userFlag = us.login(user);
 		//response反馈
 		if(userFlag != null) {
+			
 			response.getWriter().println("User:" + username + "登录成功!");
 		}else {
-			response.getWriter().println("用户不存在或密码错误!");
+//			response.getWriter().println("用户不存在或密码错误!");
+			request.setAttribute("msg", "用户不存在或密码错误!");
+			request.getRequestDispatcher("/request/login.jsp").forward(request, response);
+			
 		}
+		
 		
 
 	}

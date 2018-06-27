@@ -15,6 +15,9 @@ public class UserDAO {
 	}
 	
 	public static User isExist(User user) {
+		/*
+		 * 查询用户是否存在
+		 */
 		String sql = "select * from user where username=?";
 		try {
 			return qr.query(sql, new BeanHandler<User>(User.class), user.getUsername());
@@ -24,10 +27,9 @@ public class UserDAO {
 	}
 
 	public static User register(User user) {
-//		System.out.println("--------------------------------");
-//		Object[] params = {user.getId(), user.getUsername(), user.getPassword(), user.getGander()};
-//		System.out.println(params);
-//		return null;
+		/*
+		 * 用户注册方法
+		 */
 		try {
 			String sql = "insert into user values(?,?,?,?)";
 			Object[] params = {user.getId(), user.getUsername(), user.getPassword(), user.getGander()};

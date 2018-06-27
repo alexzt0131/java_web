@@ -103,15 +103,7 @@ public class User {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", gander=" + gander + "]";
 	}
 	
-	public static User isExist(User user) {
-		return UserDAO.isExist(user);
-	}
 
-	public static User register(User user) {
-		
-		return UserDAO.register(user);
-
-	}
 	
 	
 	

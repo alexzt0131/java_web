@@ -1,5 +1,6 @@
 package demo;
 
+import DBUtils.UserDAO;
 import domain.User;
 
 public class UserService {
@@ -9,5 +10,16 @@ public class UserService {
 	public User login(User user) {
 		//调用DAO中的登录函数
 		return dao.lgoin(user);
+	}
+	
+	
+	public static User isExist(User user) {
+		return UserDAO.isExist(user);
+	}
+
+	public static User register(User user) {
+		
+		return UserDAO.register(user);
+
 	}
 }
